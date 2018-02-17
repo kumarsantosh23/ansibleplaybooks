@@ -1,0 +1,17 @@
+---
+- hosts: apacheweb
+  user: santu
+  sudo: yes
+  gather_facts: no
+  tasks:
+  - name: date/time stamp for when the playbook runs
+   #raw: /usr/bin/date > /home/santu/outline/playbook_sart.log
+    sh: date +%Y%m%d_%H%M%S > /home/santu/outline/updateddateformat.log
+  - name: installing apachewebserver
+    yum: pkg=httpd state=latest
+  - name: start the webservice
+    command: systemctl start httpd
+  - name: verify that the webservice is running
+    command: systemctl status httpd
+    register: result
+  - debug: var=result
