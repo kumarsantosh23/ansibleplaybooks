@@ -1,0 +1,9 @@
+--- # This playbook is owned by santosh
+    # Thi playbook is created to show how to use lookup module
+- hosts: apacheweb
+  user: santu
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  tasks:
+   - debug: msg="lookup the superhero for BRUCE WAYNE {{ lookup('csvfile','Bruce Wayne file=lookup.csv  default=NOMATCH') }}"
