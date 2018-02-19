@@ -1,0 +1,843 @@
+    1  clear
+    2  sudo su root
+    3  exit
+    4  cd
+    5  sudo su root
+    6  clear
+    7  ls -tlr
+    8  pwd
+    9  cd ../
+   10  ls -tlr
+   11  cd santu
+   12  ls -tlr
+   13  cd ../user/
+   14  cd ../santu
+   15  ls -tlr
+   16  pwd
+   17  clear
+   18  ls -tlr
+   19  who
+   20  pwd
+   21  clear
+   22  ssh-keygen
+   23  ssh-copy-id 172.31.25.235
+   24  ssh santu23553.mylabserver.com
+   25  clear
+   26  ssh-copy-id santu23554.mylabserver.com
+   27  ssh santu23554.mylabserver.com
+   28  hostname
+   29  exit
+   30  clear
+   31  ansible apacheweb -m ping
+   32  cd /etc/ansible/
+   33  ls -tlr
+   34  cd
+   35  ls -trl
+   36  vim hosts
+   37  ls -tlr
+   38  clear
+   39  ansible santu -i hosts -m ping
+   40  asnible-all-hosts
+   41  ansible all-hosts
+   42  clear
+   43  ansible all --list-hosts
+   44  ansible -i hosts all --list-hosts
+   45  clear
+   46  ls -tlr
+   47  ansible all -m ping
+   48  ls -tlr
+   49  pwd
+   50  vi hosts 
+   51  ping www.google.com
+   52  sudo cp /etc/ansible/ansible.cfg .
+   53  sudo chown santu:santu ansible.cfg 
+   54  ls -tlr
+   55  vim ansible.cfg
+   56  cat hosts 
+   57  ansible -m ping
+   58  ansible all -m ping
+   59  clear
+   60  ls -tlr
+   61  mkdir config
+   62  mv ansible.cfg config/
+   63  cd config/
+   64  ansible all -m ping
+   65  cd
+   66  ansible all -m ping
+   67  clear
+   68  ls -tlr
+   69  pwd
+   70  cd config/
+   71  ls -tlr
+   72  vim ansible.cfg 
+   73  cd ../
+   74  ls -tlr
+   75  ansible all -m ping
+   76  clear
+   77  ls -tlr
+   78  pwd
+   79  cd config/
+   80  ls -tlr
+   81  export ANSIBLE_CONFIG=/home/santu/config/ansible.cfg
+   82  set 
+   83  clear
+   84  set | grep ANSIBLE
+   85  ansible all -m ping
+   86  ls -tlr
+   87  cd ../
+   88  ls -tlr
+   89  vim hosts
+   90  ansible all -m ping
+   91  pwd
+   92  vim hosts
+   93  ansible all -m ping
+   94  clear
+   95  ls -tlr
+   96  cd config/
+   97  ls -tlr
+   98  mv ansible.cfg ../
+   99  ls -tlr
+  100  ansible all -m ping
+  101  ls -tlr
+  102  clear
+  103  ls -tlr
+  104  cd ../
+  105  ls -tlr
+  106  mv ansible.cfg config/
+  107  ls -tlr
+  108  java --version
+  109  java -version
+  110  which java
+  111  set | grep "java_home"
+  112  which ansible
+  113  which ansible_config
+  114  which ANSIBLE_CONFIG
+  115  set | grep "ANSIBLE_CONFIG"
+  116  clear
+  117  ls -tlr
+  118  cd /etc/ansible/
+  119  ls -tlr
+  120  cd roles/
+  121  sl -tlr
+  122  ls -tlr
+  123  clear
+  124  ls -tlr
+  125  hostname
+  126  ping santu23553.mylabserver.com
+  127  ping 172.31.25.235
+  128  sudo yum update
+  129  sudo visudo
+  130  ls -tlr
+  131  cd
+  132  clear
+  133  ls -tlr
+  134  cd config/
+  135  ls -tlr
+  136  rm -r ansible.cfg 
+  137  vi /etc/ansible/ansible.cfg 
+  138  clear
+  139  ls -tlr
+  140  sudo su - root
+  141  clear
+  142  ls -tlr
+  143  ssh-copy-id localhost
+  144  ansible local -m ping
+  145  ansible all -m ping
+  146  clear
+  147  ansible all -m ping
+  148  clear
+  149  ls -tlr
+  150  ansible apacheweb -s -m shell -a 'yum installed | grep python"
+  151  ansible apacheweb -s -m shell -a 'yum installed | grep python'
+  152  ansible apacheweb -s -m shell -a 'yum list installed | grep python'
+  153  ansible apacheweb -s -m shell -a 'yum update'
+  154  ansible all -s -m shell -a 'yum install -y lynx'
+  155  lynx
+  156  ansible all -s -m shell -a 'yum install -y lynx'
+  157  ansible apacheweb -s -m shell -a 'cat /var/log/mymessages.log.out'
+  158  ansible apacheweb -m shell -a 'cat /var/log/mymessages.log.out'
+  159  ansible all  -m shell -a 'yum install -y lynx'
+  160  ansible all -s -m shell -a 'yum install -y lynx'
+  161  ansible all  -m shell -a 'touch test.txt'
+  162  cd
+  163  ls -tlr
+  164  ansible all  -m shell -a 'rm test.txt'
+  165  ls -tlr
+  166  ansible all  -m shell -a 'mkdir test; touch test1'
+  167  ls -tlr
+  168  ansible all  -m shell -a 'rm -r test test1'
+  169  ls -tlr
+  170  sudo su root
+  171  sudo su root
+  172  ansible --version
+  173  ansible
+  174  cd /etc/ansible/
+  175  ls -tlr
+  176  cat hosts
+  177  clear
+  178  ls -tlr
+  179  ansible --all
+  180  ansible hostsall
+  181  clear
+  182  ls -tlr
+  183  ansibeplaybook
+  184  ansibleplaybook
+  185  ansible playbook
+  186  clear
+  187  ansible all --list-hosts
+  188  clear
+  189  ansible -all -list-hosts
+  190  ansible -all --list-hosts
+  191  claer
+  192  clear
+  193  ansible -all --list-hosts
+  194  clear
+  195  ansible all --list-hosts
+  196  ansible all
+  197  clear
+  198  mkdir outline
+  199  cd
+  200  clear
+  201  mkdir outline
+  202  cd outline/
+  203  ls -tlr
+  204  vi webserver.txt
+  205  ls -tlr
+  206  cp -r webserver.txt webserver.yaml
+  207  ls -tlr
+  208  mv webserver.yaml webserver.yml
+  209  ls -tlr
+  210  clear
+  211  vi webserver.yml
+  212  ls -tlr
+  213  ssh santu23553.mylabserver.com
+  214  clear
+  215  ls -tlr
+  216  ansible-playbook webserver.yml --check
+  217  vi webserver.yml 
+  218  ansible-playbook webserver.yml --check
+  219  pwd
+  220  vi webserver.yml 
+  221  ansible-playbook webserver.yml --check
+  222  vi webserver.yml 
+  223  ansible-playbook webserver.yml --check
+  224  date
+  225  which date
+  226  /usr/bin/date> /home/santu/playbook_sart.log
+  227  cat /home/santu/playbook_sart.log
+  228  rm -r /home/santu/playbook_sart.log
+  229  vi webserver.yml 
+  230  ansible-playbook webserver.yml --check
+  231  vi webserver.yml 
+  232  ansible-playbook webserver.yml --check
+  233  vi webserver.yml 
+  234  ansible-playbook webserver.yml --check
+  235  vi webserver.yml 
+  236  ansible-playbook webserver.yml --check
+  237  vi webserver.yml 
+  238  ansible-playbook webserver.yml --check
+  239  vi webserver.yml 
+  240  ansible-playbook webserver.yml --check
+  241  vi webserver.yml 
+  242  ansible-playbook webserver.yml --check
+  243  vi webserver.yml 
+  244  ansible-playbook webserver.yml --check
+  245  vi webserver.yml 
+  246  ansible-playbook webserver.yml --check
+  247  vi webserver.yml 
+  248  ansible-playbook webserver.yml --check
+  249  vi webserver.yml 
+  250  ansible-playbook webserver.yml --check
+  251  vi webserver.yml 
+  252  ansible-playbook webserver.yml --check
+  253  clear
+  254  ansible-playbook webserver.yml --check
+  255  history
+  256  ansible all --list-hosts
+  257  cat /etc/ansible/hosts
+  258  ls -tlr
+  259  vi webserver.yml
+  260  ansible-playbook webserver.yml --check
+  261  vi webserver.yml
+  262  ansible-playbook webserver.yml --check
+  263  vi webserver.yml
+  264  ansible-playbook webserver.yml --check
+  265  vi webserver.yml
+  266  ansible-playbook webserver.yml --check
+  267  vi webserver.yml
+  268  ansible-playbook webserver.yml --check
+  269  vi webserver.yml
+  270  ansible-playbook webserver.yml --check
+  271  cat /etc/ansible/hosts
+  272  vi webserver.yml
+  273  ansible-playbook webserver.yml --check
+  274  ls -tlr
+  275  ansible-playbook -i /etc/ansible/hosts webserver.yml --check
+  276  ls -tlr
+  277  ansible-playbook webserver.yml --check
+  278  vi webserver.yml
+  279  ansible-playbook -i /etc/ansible/hosts webserver.yml --check
+  280  ansible ping
+  281  cd /etc/ansible/
+  282  ls -tlr
+  283  vi ansible.cfg
+  284  pwd
+  285  cd
+  286  cd outline/
+  287  vi webserver.yml
+  288  ansible-playbook -i /etc/ansible/hosts webserver.yml --check
+  289  vi webserver.yml
+  290  ansible-playbook -i /etc/ansible/hosts webserver.yml --check
+  291  vi webserver.yml
+  292  ansible-playbook -i /etc/ansible/hosts webserver.yml --check
+  293  ansible-playbook webserver.yml
+  294  clar
+  295  clear
+  296  ansible-playbook -i /etc/ansible/hosts webserver.yml
+  297  vi webserver.yml
+  298  ansible-playbook -i /etc/ansible/hosts webserver.yml
+  299  vi webserver.yml
+  300  ansible-playbook -i /etc/ansible/hosts webserver.yml
+  301  vi webserver.yml
+  302  ansible-playbook -i /etc/ansible/hosts webserver.yml
+  303  vi webserver.yml
+  304  ansible-playbook -i /etc/ansible/hosts webserver.yml
+  305  vi webserver.yml
+  306  ansible-playbook -i /etc/ansible/hosts webserver.yml
+  307  vi webserver.yml
+  308  ansible-playbook -i /etc/ansible/hosts webserver.yml
+  309  vi webserver.yml
+  310  ansible-playbook -i /etc/ansible/hosts webserver.yml
+  311  vi webserver.yml
+  312  ansible-playbook -i /etc/ansible/hosts webserver.yml
+  313  vi webserver.yml
+  314  ansible --version
+  315  vi webserver.yml
+  316  ansible-playbook -i /etc/ansible/hosts webserver.yml
+  317  vi webserver.yml
+  318  ansible all --list-hosts
+  319  cat /etc/ansible/hosts
+  320  vi webserver.yml
+  321  ansible-playbook -i /etc/ansible/hosts webserver.yml
+  322  vi webserver.yml
+  323  ansible-playbook -i /etc/ansible/hosts webserver.yml
+  324  vi webserver.yml
+  325  ansible-playbook -i /etc/ansible/hosts webserver.yml
+  326  vi webserver.yml
+  327  ansible-playbook -i /etc/ansible/hosts webserver.yml
+  328  vi webserver.yml
+  329  ansible-playbook -i /etc/ansible/hosts webserver.yml
+  330  vi webserver.yml
+  331  ansible-playbook -i /etc/ansible/hosts webserver.yml
+  332  vi webserver.yml
+  333  vi test.yml
+  334  ansible-playbook -i /etc/ansible/hosts test.yml 
+  335  vi test.yml
+  336  ansible-playbook -i /etc/ansible/hosts test.yml 
+  337  vi test.yml
+  338  ansible-playbook -i /etc/ansible/hosts test.yml 
+  339  clear
+  340  ls -tlr
+  341  vi webserver.yml
+  342  ansible-playbook -i /etc/ansible/hosts webserver.yml
+  343  vi webserver.yml
+  344  ansible-playbook -i /etc/ansible/hosts webserver.yml
+  345  vi webserver.yml
+  346  ansible-playbook -i /etc/ansible/hosts webserver.yml
+  347  vi webserver.yml
+  348  ansible-playbook -i /etc/ansible/hosts webserver.yml
+  349  vi webserver.yml
+  350  ansible-playbook -i /etc/ansible/hosts webserver.yml
+  351  vi webserver.yml
+  352  ansible-playbook -i /etc/ansible/hosts webserver.yml
+  353  vi webserver.yml
+  354  ansible-playbook -i /etc/ansible/hosts webserver.yml
+  355  vi webserver.yml
+  356  ansible-playbook -i /etc/ansible/hosts webserver.yml
+  357  vi webserver.yml
+  358  ansible-playbook -i /etc/ansible/hosts webserver.yml
+  359  vi webserver.yml
+  360  vi test.yml 
+  361  cat /etc/ansible/hosts
+  362  vi test.yml 
+  363  ansible-playbook test.yml
+  364  vi test.yml 
+  365  ansible-playbook test.yml
+  366  ssh santu23554.mylabserver.com
+  367  vi test.yml 
+  368  ansible /etc/ansible/hosts ping
+  369  ansible all -m ping
+  370  ansible-playbook test.yml
+  371  vi test.yml 
+  372  ansible-playbook test.yml
+  373  vi webserver.yml
+  374  vi webserver.
+  375  vi webserver.yml
+  376  vi test.yml 
+  377  ansible-playbook test.yml
+  378  vi webserver.yml
+  379  vi test.yml 
+  380  ansible-playbook test.yml
+  381  vi test.yml 
+  382  ansible-playbook test.yml
+  383  vi test.yml 
+  384  ansible-playbook test.yml
+  385  vi test.yml 
+  386  ansible-playbook test.yml
+  387  vi test.yml 
+  388  ansible-playbook test.yml
+  389  vi webserver.yml
+  390  vi test.yml 
+  391  ansible-playbook test.yml
+  392  vi test.yml 
+  393  ansible-playbook test.yml
+  394  vi test.yml 
+  395  ansible-playbook test.yml
+  396  vi test.yml 
+  397  ansible-playbook test.yml
+  398  vi test.yml 
+  399  ansible-playbook test.yml
+  400  clear
+  401  ls -tlr
+  402  cd outline/
+  403  ls -tlr
+  404  vi test.yml
+  405  ansible-playbook test.yml
+  406  vi test.yml
+  407  ssh santu23554.mylabserver.com
+  408  hostname
+  409  vi test.yml
+  410  ansible-playbook test.yml
+  411  cat /etc/ansible/hosts
+  412  vi test.yml
+  413  ansible-playbook test.yml
+  414  vi test.yml
+  415  ansible-playbook test.yml
+  416  vi test.yml
+  417  ansible-playbook test.yml
+  418  vi test.yml
+  419  ansible-playbook test.yml
+  420  vi test.yml
+  421  ansible-playbook test.yml
+  422  vi test.yml
+  423  ls -tlr
+  424  cd ../
+  425  sl -tlr
+  426  ls -tlr
+  427  pwd
+  428  cd outline/
+  429  ls -tlr
+  430  vi test.yml 
+  431  pwd
+  432  cd ../
+  433  ls -tlra
+  434  clear
+  435  cd outline/
+  436  ls -tlr
+  437  vi test.yml
+  438  ansible-playbook test.yml
+  439  vi test.yml
+  440  ansible-playbook test.yml
+  441  vi test.yml
+  442  ansible-playbook test.yml
+  443  vi test.yml
+  444  ansible-playbook test.yml
+  445  vi test.yml
+  446  ansible-playbook test.yml
+  447  vi test.yml 
+  448  ansible-playbook test.yml
+  449  vi test.yml 
+  450  ansible-playbook test.yml
+  451  vi test.yml 
+  452  ansible-playbook test.yml
+  453  vi test.yml 
+  454  bash
+  455  clear
+  456  ansible -m ping
+  457  clear
+  458  ansible -i /etc/ansible/hosts ping
+  459  history
+  460  history | grep "*ping"
+  461  history | grep "*ping*"
+  462  history | grep "*hosts*"
+  463  history | grep "*ansible"
+  464  clear
+  465  cd outline/
+  466  ls -tlr
+  467  cp -rp test.yml test.original
+  468  vi test.yml 
+  469  ansible-playbook test.yml
+  470  vi test.yml 
+  471  ansible-playbook test.yml
+  472  vi test.yml
+  473  ansible-playbook test.yml --check
+  474  vi test.yml
+  475  ansible-playbook test.yml --check
+  476  vi test.yml
+  477  ansible-playbook test.yml --check
+  478  vi test.yml
+  479  ansible-playbook test.yml --check
+  480  vi test.yml
+  481  ansible-playbook test.yml --check
+  482  ansible-playbook test.yml 
+  483  vi test.yml 
+  484  ansible-playbook test.yml 
+  485  vi test.yml 
+  486  ansible-playbook test.yml --check
+  487  vi test.yml 
+  488  ansible-playbook test.yml --check
+  489  ansible-playbook test.yml 
+  490  vi test.yml 
+  491  ansible-playbook test.yml --check
+  492  ansible-playbook test.yml 
+  493  vi test.yml 
+  494  ansible-playbook test.yml 
+  495  vi test.yml 
+  496  ansible-playbook test.yml 
+  497  vi test.yml 
+  498  ansible-playbook test.yml 
+  499  vi test.yml 
+  500  ansible-playbook test.yml 
+  501  clear
+  502  cd ../
+  503  ls -tlr
+  504  cd playbooks/
+  505  ls -tlr
+  506  ls -tlra
+  507  clear
+  508  ls -tlr
+  509  cat ../outline/test.yml
+  510  clear
+  511  vi myfirstplaybook.yml
+  512  ansible-playbook myfirstplaybook.yml --check
+  513  mkdir conf
+  514  cd conf/
+  515  touch copyright.yml
+  516  cd ../
+  517  ansible-playbook myfirstplaybook.yml --check
+  518  touch ../config/webdefaluts.yml
+  519  ansible-playbook myfirstplaybook.yml --check
+  520  touch ../conf/webdefalults.yml
+  521  cd ../config/
+  522  ls -tlr
+  523  cd ../
+  524  cd playbooks/
+  525  vi myfirstplaybook.yml 
+  526  cd ../conf
+  527  cd ../
+  528  ls -tlr
+  529  mv confg conf
+  530  ls -tlr
+  531  mv config conf
+  532  ls -tlr
+  533  cd conf/
+  534  ls -tlr
+  535  cd ../
+  536  cd playbooks/
+  537  ansible-playbook myfirstplaybook.yml --check
+  538  ls -tlr
+  539  cat conf/webdefalults.yml
+  540  touch conf/webdefalults.yml
+  541  ansible-playbook myfirstplaybook.yml --check
+  542  cat /etc/ansible/hosts
+  543  vi myfirstplaybook.yml
+  544  ansible-playbook myfirstplaybook.yml --check
+  545  vi myfirstplaybook.yml
+  546  ansible-playbook myfirstplaybook.yml
+  547  clear
+  548  ls -tlr
+  549  vi myfirstplaybook.yml 
+  550  ansible-playbook myfirstplaybook.yml --check
+  551  vi myfirstplaybook.yml 
+  552  ansible-playbook myfirstplaybook.yml --check
+  553  ansible-playbook myfirstplaybook.yml --check check_mode: no
+  554  vi myfirstplaybook.yml 
+  555  ansible-playbook myfirstplaybook.yml --check
+  556  vi myfirstplaybook.yml 
+  557  ansible-playbook myfirstplaybook.yml --check
+  558  sudo yum remove httpd
+  559  ansible-playbook myfirstplaybook.yml --check
+  560  ansible-playbook myfirstplaybook.yml
+  561  httpd
+  562  sytemctl status httpd
+  563  systemctl status httpd
+  564  vi myfirstplaybook.yml 
+  565  ansible-playbook myfirstplaybook.yml
+  566  vi myfirstplaybook.yml 
+  567  ansible-playbook myfirstplaybook.yml
+  568  sudo yum remove httpd
+  569  ansible-playbook myfirstplaybook.yml
+  570  vi myfirstplaybook.yml 
+  571  cp myfirstplaybook.yml updatedplaybook.yml
+  572  ls -tlr
+  573  vi updatedplaybook.yml 
+  574  cd conf/
+  575  vi webdefalults.yml 
+  576  vi ../updatedplaybook.yml 
+  577  cd ../
+  578  ls -tlr
+  579  ansible-playbook updatedplaybook.yml 
+  580  ansible-playbook updatedplaybook.yml
+  581  vi updatedplaybook.yml 
+  582  ansible-playbook updatedplaybook.yml
+  583  vi updatedplaybook.yml 
+  584  cp updatedplaybook.yml variableprompt.ymml
+  585  vi variableprompt.ymml 
+  586  cp variableprompt.ymml variableprompt.yml
+  587  vi variableprompt.ym
+  588  vi variableprompt.yml 
+  589  ansible-playbook variableprompt.yml
+  590  clear
+  591  vi variableprompt.yml 
+  592  yum install git
+  593  sudo yum install -y git
+  594  git
+  595  clear
+  596  cd ../
+  597  sl -tlr
+  598  ls -tlr
+  599  ls -tlra
+  600  cd .ssh/
+  601  ls -tlr
+  602  cat id_rsa.pub
+  603  clear
+  604  git
+  605  clear
+  606  cd
+  607  ls -tlr
+  608  git clone git@github.com:kumarsantosh23/ansibleplaybooks.git
+  609  ls -tlr
+  610  cd ansibleplaybooks/
+  611  ls -tlr
+  612  clear
+  613  ls -tlr
+  614  cd ../
+  615  ls -tlr
+  616  git commit
+  617  clear
+  618  ls -tlr
+  619  cd ansibleplaybooks/
+  620  ls -tlr
+  621  git checkout feature/playbook
+  622  git
+  623  git branch feature/playbooks
+  624  git checkout feature/playbooks
+  625  git status
+  626  cd ../
+  627  ls -tlr
+  628  cp -r hosts outline conf playbooks ansibleplaybooks/
+  629  cd ansibleplaybooks/
+  630  ls -tlr
+  631  git add .
+  632  git commit -m "Intial stage of playbooks"
+  633  git config --global user.email "santu@santu23552.com"
+  634  git config --global user.name "santosh"
+  635  git commit -m "Intial stage of playbooks"
+  636  git push
+  637  git
+  638  git push .
+  639  git branch
+  640  git commit
+  641  git push feature/playbooks
+  642  git push origin feature/playbooks
+  643  ls -tlr
+  644  clear
+  645  ls -tlr
+  646  cd playbooks/
+  647  ls -tlr
+  648  ansible-playbooks variableprompt.yml check
+  649  ansible-playbooks variableprompt.yml -check
+  650  ansible-playbooks variableprompt.yml --check
+  651  ansible-playbook variableprompt.yml --check
+  652  date
+  653  ls -tlr
+  654  vi lookup.csv
+  655  vi lookupmodule.yml
+  656  ansible-playbook lookupmodule.yml 
+  657  ls -tlr
+  658  cat lookup.csv 
+  659  vi lookupmodule.yml
+  660  ansible-playbook lookupmodule.yml 
+  661  vi lookupmodule.yml
+  662  ansible-playbook lookupmodule.yml 
+  663  clear
+  664  ls -tlr
+  665  clear
+  666  ls -tlr
+  667  clear
+  668  ls -tlr
+  669  vim runonce.yml
+  670  ansible-playbook runonce.yml
+  671  vim runonce.yml
+  672  ansible-playbook runonce.yml
+  673  vim runonce.yml
+  674  ansible-playbook runonce.yml
+  675  cd ../
+  676  ls -tlr
+  677  cd ../
+  678  ls -tlr
+  679  pwd
+  680  clear
+  681  ls -tlr
+  682  cat uptime.log 
+  683  cd playbooks/
+  684  ls -tlr
+  685  cd ../
+  686  ls -tlr
+  687  cd outline/
+  688  ls -tlr
+  689  cd ../
+  690  ls -tlr
+  691  cd ansibleplaybooks/
+  692  ls -tlr
+  693  cd playbooks/
+  694  ls -tlr
+  695  cd ../../
+  696  ls -tlr
+  697  cd ansibleplaybooks/
+  698  ls -tlr
+  699  git add .
+  700  git commit -m "commiting with updated playbooks"
+  701  git branch
+  702  git push origin feature/playbooks
+  703  ls -tlr
+  704  cd jp
+  705  cd playbooks/l
+  706  cd playbooks/
+  707  ls -tlr
+  708  cd conf/
+  709  ls -tlr
+  710  cd ../
+  711  ls -tlr
+  712  clear
+  713  vi local.yml
+  714  ansible-playbook local.yml
+  715  ansible-playbook -s local.yml
+  716  telent
+  717  telnet
+  718  ls -tlr
+  719  git add .
+  720  git commit -m
+  721  git commit
+  722  git commit -m "updated"
+  723  git branch
+  724  git push origin feature/playbooks
+  725  ls -tlr
+  726  vim loop.yml
+  727  cat lookupmodule.yml
+  728  ls -tlr
+  729  vi loop.yml 
+  730  ansible-playbook loop.yml 
+  731  clear
+  732  ansible-playbook loop.yml 
+  733  vi loop.yml 
+  734  ansible-playbook loop.yml 
+  735  ls -tlr
+  736  pwd
+  737  vi loop.yml 
+  738  rm variableprompt.ymml
+  739  ls -tlr
+  740  vim why.yml
+  741  ansible apacheweb -m setup -a 'filter-ansible_os_family'
+  742  ansible apacheweb -m setup -a 'filter=ansible_os_family'
+  743  ansible all -m setup -a 'filter=ansible_os_family'
+  744  ls -tlr
+  745  ansible-plabyook why.yml
+  746  ansible-playbook why.yml
+  747  touch conf/webdefaults.yml
+  748  ansible-playbook why.yml
+  749  vim why.yml
+  750  ansible-playbook why.yml
+  751  vim why.yml
+  752  ls -tlr
+  753  cd
+  754  cd /etc/ansible/
+  755  ls -tlr
+  756  vi ansible.cfg
+  757  sudo vi ansible.cfg 
+  758  ls -tlr
+  759  cd -
+  760  ls -tlr
+  761  cd ansibleplaybooks/
+  762  ls -tlr
+  763  cd playbooks/
+  764  ls -tlr
+  765  ansible-playbook why.yml
+  766  vim why.yml 
+  767  ls -tlr /etc/ansible/
+  768  ls -tlra /etc/ansible/
+  769  clear
+  770  ls -tlr
+  771  vim untill.ml
+  772  vim untill.yml
+  773  ansible-playbook untill.yml 
+  774  vim untill.yml
+  775  ansible-playbook untill.yml 
+  776  vim untill.yml
+  777  clear
+  778  ls -tlr
+  779  vi myfirstplaybook.yml
+  780  ls -tlr
+  781  cd ../
+  782  ls -tlr
+  783  git add .
+  784  git add -A
+  785  git commit -m "playbooks with updated modules"
+  786  git branch
+  787  git push origin feature/playbooks
+  788  ls -tlr
+  789  cd playbooks/
+  790  ls -tlr
+  791  vim accounts.yml
+  792  clear
+  793  ls -tlr
+  794  cd ../
+  795  ls -tlr
+  796  cd conf/
+  797  sl -tlr
+  798  ls -tlr
+  799  cd ../
+  800  ls -tlr
+  801  rm conf
+  802  rm -r conf
+  803  ls -tlr
+  804  cd playbooks/
+  805  ls -tlr
+  806  cd conf/
+  807  ls -tlr
+  808  cd ../
+  809  ls -tlr
+  810  ansible-vault accounts.yml
+  811  ansible-vault create secure.yml
+  812  cat secure.yml 
+  813  ansible-vault edit secure.yml 
+  814  cat secure.yml 
+  815  ansible-vault rekey secure.yml
+  816  cat secure.yml 
+  817  vi secure.yml 
+  818  ansible-vault edit secure.yml 
+  819  ansible-vault decrypt secure.yml
+  820  cat secure.yml
+  821  cat accounts.yml 
+  822  ansible-vault encrypt accounts.yml secure.yml
+  823  cat accounts.yml 
+  824  cat secure.yml 
+  825  cd ..
+  826  ls -tlr
+  827  git add -A
+  828  git commit -m "Vaulting"
+  829  git branch
+  830  git push feature/playbooks
+  831  pwd
+  832  git push orgin feature/playbooks
+  833  ls -tlr
+  834  git commit
+  835  git push origin feature/playbooks
+  836  cd playbooks/
+  837  ls -tlr
+  838  cat secure.yml 
+  839  clear
+  840  ls -tlr
+  841  history > commands.txt 
+  842  commands.txt 
+  843  history > commands.txt | grep 

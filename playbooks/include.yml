@@ -1,0 +1,11 @@
+--- #Full include tasks examples
+
+- hosts: apacheweb
+  user: santu
+  sudo: yes
+  connection: ssh 
+  gather_facts: no
+  tasks:
+    - include: plays/packages.yml
+    - name: verify the telnet package is installed
+      command: yum list installed | grep telnet > /home/santu/packages.log
