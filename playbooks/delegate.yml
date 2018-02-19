@@ -1,0 +1,13 @@
+--- #Delegate to function demp
+
+- hosts: apacheweb
+  sudo: yes
+  user: santu
+  gather_facts: no
+  connection: yes
+  tasks:
+   - name: Run a remote ping on the app server
+     command: ping -c 4 172.31.30.50
+     delegate_to: 127.0.0.1
+   - name: install a package
+     yum: pkg=telnet state=installed
