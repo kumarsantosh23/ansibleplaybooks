@@ -1,0 +1,27 @@
+--- # written by user santosh kumar
+    # updatd playbook file to test variable fiels from webdefaluts.yml
+- hosts: apacheweb
+  user: santu
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  vars:
+    playbook_versions: 0.1lb
+  vars_files:
+     - conf/copyright.yml
+     - conf/webdefalults.yml
+  tasks:
+     - name: Install apache web server
+       action: yum name=httpd state=installed
+       notify: restart HTTPD
+       #check_mode: no
+     - name: Install the lynx web browser
+       action: yum name={{ pkg_lynx }} state=installed
+     - name: verify the lynx web browser
+       action: yum name=lynx state=present
+  handlers:
+     - name: restart HTTPD
+       action: service name=httpd state=restarted
+  
+
+

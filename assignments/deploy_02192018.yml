@@ -1,0 +1,12 @@
+--- #exercise 2
+
+- hosts: all
+  user: santu
+  sudo: yes
+  gather_facts: no
+  connection: ssh
+  tasks:
+    - name: installing lynx package
+      yum: pkg=lynx state=installed
+    - name: checking if telenet is installed 
+      yum: pkg=telnet state=present

@@ -1,0 +1,14 @@
+--- #notify and handler module
+
+- hosts: apacheweb
+  sudo: yes
+  user: santu
+  connection: ssh
+  gather_facts: no
+  tasks:
+     - name: installing web server
+       yum: pkg=httpd state=installed
+       notify: apache is instlled
+  handlers:
+        - name: apache is instlled
+          command: systemctl start httpd

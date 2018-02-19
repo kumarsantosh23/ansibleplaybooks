@@ -1,0 +1,36 @@
+--- #updated playbook with modules
+- hosts: apacheweb
+  user: santu
+  sudo: yes
+  gather_facts: no
+  tasks:
+  - name: date/time stamp for when the playbook runs
+    command: /usr/bin/date
+    register: timestamp_start
+  - debug: var=timestamp_start
+   #shell: date +%Y%m%d_%H%M%S > /home/santu/updateddateformat.log
+  - name: installing apachewebserver
+    yum: pkg=httpd state=latest
+    notify: start HTTPD
+ # - name: verify that the webservice is running
+ #   command: systemctl status httpd
+ #   register: result
+ # - debug: var=result
+  - name: install client software-lynx
+    yum: pkg=lynx state=latest
+  - name: install client software-telnet
+    yum: pkg=telnet state=latest
+  - name: log all packages install on the system
+    command: yum list installed
+    register: installed_result
+  - debug: var=installed_result 
+  - name: date/time stamp for whent the plabyook ends
+    command: /usr/bin/date
+    register: time_end
+  - debug: var=time_end
+  - name: testing the log file saving
+    shell: /usr/bin/date > /home/santu/playbook_end.log
+  handlers:
+  - name: start HTTPD
+    #command: systemctl start httpd
+    service: name=httpd state=restarted

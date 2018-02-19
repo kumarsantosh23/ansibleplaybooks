@@ -1,0 +1,15 @@
+--- # Testing the J2 Template module
+
+- hosts: apacheweb
+  connection: ssh
+  user: santu
+  sudo: yes
+  gather_facts: no
+  vars: 
+     userName: santu
+     userPassword: password123
+     connectionType: SFTP
+  tasks:
+    - name: Install the conf file customized for the system
+      template: src=test.conf.j2 dest= /home/santu owner=santu group=santu mode=750
+     
