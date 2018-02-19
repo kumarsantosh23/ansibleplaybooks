@@ -1,0 +1,26 @@
+---
+- hosts: all
+  user: test
+  sudo: yes
+  gather_facts: no
+  tasks:
+    - name: date/time stamp for when the playbook runs
+      raw: /usr/bin/date> /home/santu/playbook_sart.log
+    - name: installing apachewebserver
+      yum: pkg=httpd state=latest
+    - name: start the webservice
+      service: name=httpd start=restarted
+   # - name: 'verify that the webservice is running'
+      command: systemctl status httpd
+      register: result
+      debug: var=result
+    - name: install client software
+      yum: pkg=telnet state=latest  
+      yum: pkg=lynx   state=latest
+    - name: log all the packages install on the system
+      raw: yum list installed >  /home/santu/installed.log
+    - name:  date/time stamp for when the playbook ends
+      raw: /usr/bin/date > /home/test/playbook_end.log
+
+
+

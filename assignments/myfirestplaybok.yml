@@ -1,0 +1,17 @@
+--- #this is testing the playbook
+
+- hosts: apacheweb
+  user: santu
+  connection: ssh
+  sudo: yes
+  gather_facts: no 
+  vars:
+     playbook_version: 1.0
+  vars_files:
+      - conf/copyright.yml
+      - conf/webdefaults.yml
+  tasks:
+      - name: install httpd
+        yum: pkg=httpd state=installed
+      - name: checking for lynx package
+        yum: pkg=lynx state=present

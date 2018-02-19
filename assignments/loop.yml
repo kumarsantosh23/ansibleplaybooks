@@ -1,0 +1,14 @@
+---
+
+- hosts: apacheweb
+  user: santu
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  tasks:
+    - name: adda list of users
+      user: name={{ item }} state=present
+      with_items:
+           - user3
+           - user4
+           - user5

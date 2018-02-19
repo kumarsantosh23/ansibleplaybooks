@@ -1,0 +1,17 @@
+--- #WHEN playbook example
+- hosts: apacheweb
+  user: santu
+  sudo: yes
+  connection: ssh
+  vars:
+    playbook_type: conditionalexample
+  vars_files:
+     - conf/copyright.yml
+     - conf/webdefaults.yml
+  tasks:
+     - name: Install apache appropriate to the distrubution type
+       command: yum -y install httpd
+       when: ansible_os_family == "Ubuntu"
+     - name: install apache appropriate to the distrubution type ( Redhat/Centos)
+       command: yum -y install httpd
+       when: ansible_os_family == "RedHat"
