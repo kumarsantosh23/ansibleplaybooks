@@ -1,0 +1,9 @@
+---
+
+- hosts: apacheweb
+  sudo: yes
+  user: santu
+  gather_facts: no
+  connection: ssh
+  tasks:
+     - debug: msg="{{ lookup('env','HOME') }} is the value listed"

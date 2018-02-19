@@ -1,0 +1,12 @@
+---
+
+- hosts: all
+  connection: ssh
+  user: santu
+  gather_facts: no
+  tasks:
+     - name: uptime
+       command: uptime > /home/santu/uptime.log
+     - name: listing of directories
+       shell: ls -tlr /var > /home/santu/dir.list
+       run_once: true

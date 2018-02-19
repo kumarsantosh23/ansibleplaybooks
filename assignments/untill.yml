@@ -1,0 +1,17 @@
+---
+
+- hosts: apacheweb
+  sudo: yes
+  user: santu
+  gather_facts: no
+  tasks:
+    - name: install httpd package
+      yum: pkg=httpd state=latest
+    - name: status of httpd
+      shell: systemctl status httpd
+      register: result
+      until: result.stdout.find("active (running)") != -1
+      retries: 5
+      delay: 5
+    - debug: var=result
+

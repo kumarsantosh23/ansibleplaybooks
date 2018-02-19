@@ -1,0 +1,11 @@
+---
+- hosts: apacheweb
+  user: santu
+  sudo: yes
+  gather_facts: yes
+  vars_files:
+     - plays/plays.yml
+  tasks:
+    - include: plays/plays.yml
+    - name: verfiy the telnet package is installed
+      raw: yum list installed | grep telnet > /home/santu/pkgs.log 

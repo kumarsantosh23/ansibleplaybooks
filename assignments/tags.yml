@@ -1,0 +1,18 @@
+---
+- hosts: apacheweb
+  connection: ssh
+  user: santu
+  sudo: yes
+  gather_facts: no
+  tasks:
+    - name: install below packags
+      yum: pkg={{ item }} state=installed
+      with_items:
+           - telnet
+           - lynx
+      tags:
+           - packages
+    - name: verify the telnet is instaled
+      raw: yum list installed | grep telnet > /home/santu/packages.log
+      tags:
+           - logging
