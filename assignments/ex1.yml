@@ -1,0 +1,10 @@
+--- #installing lynx on apacheweb
+
+- hosts: apacheweb
+  sudo: yes
+  user: santu
+  gather_facts: no
+  connection: ssh
+  tasks:
+   - name: installation of lynx on apachweb
+     yum: pkg=lynx state=latest
