@@ -1,0 +1,14 @@
+## To check the ssh connectivity of target servers 
+---
+- hosts: all
+  gather_facts: no
+  connection: ssh
+  become_method: yes
+  tasks:
+   - name: To ping the servers
+     ping:
+     register: output
+   - debug: msg={{output}}
+    
+      
+ 
