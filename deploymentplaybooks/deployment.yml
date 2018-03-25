@@ -1,0 +1,28 @@
+---
+
+- hosts: all
+  connection: ssh
+  sudo: yes
+  gather_facts: no
+  vars:
+   - targetlocation: "{{env.deploy_path}}/{{env.deploy_domain}}"
+  environment:
+     JAVA_HOME: "{{JAVA_HOME}}"
+     M2_HOME: "{{M2_HOME}}"
+  vars:
+   - env: "{{host}}"
+  vars_files:
+   - variables.yml
+  tasks:
+   - name: Generating timestamp value
+     command: 'date +%Y%m%d_%H%M%S'
+     register: timestamp
+   - name: copying application package to target hosts
+     copy: src='{/home/santu/ansibleplaybooks/rectangle.tar}' dest='{{targetlocation}}'
+   - name: Exploding applicaiton package contents
+     unarchive: src='{targetlocation}/rectangle.tar' dest='{{targetlocation}}' remote_src=yes
+   - name: creating symbolic links
+     file: src='((targetlocation}}/{{item}}.{{timestamp}}' dest='{{targetlocation}}/{{item}}' state=link
+   - name: Ensuring directories has right previlages
+     shell: find '{{targetlocation}}' -type d -exec chmod -c 0755 {} \;
+     register: chmod_result
