@@ -1,16 +1,15 @@
 ---
 
-- hosts: all
+- hosts: apacheweb
   connection: ssh
-  sudo: yes
+  #sudo: yes
   gather_facts: no
   vars:
-   - targetlocation: "{{env.deploy_path}}/{{env.deploy_domain}}"
+  #- targetlocation: "{{env.deploy_path}}/{{env.deploy_domain}}"
+   - env: "{{host}}"
   environment:
      JAVA_HOME: "{{JAVA_HOME}}"
      M2_HOME: "{{M2_HOME}}"
-  vars:
-   - env: "{{host}}"
   vars_files:
    - variables.yml
   tasks:
@@ -18,9 +17,13 @@
      command: 'date +%Y%m%d_%H%M%S'
      register: timestamp
    - name: copying application package to target hosts
-     copy: src='{/home/santu/ansibleplaybooks/rectangle.tar}' dest='{{targetlocation}}'
+     copy:
+       src: /home/santu/ansibleplaybooks/rectangle.tar
+       dest: /home/santu/apacheapp/tomcatapp
+       owner: santu
+       group: santu
    - name: Exploding applicaiton package contents
-     unarchive: src='{targetlocation}/rectangle.tar' dest='{{targetlocation}}' remote_src=yes
+     unarchive: src=/home/santu/apacheapp/tomcatapp/rectangle.tar  dest=/home/santu/apacheapp/tomcatapp  remote_src=yes
    - name: creating symbolic links
      file: src='((targetlocation}}/{{item}}.{{timestamp}}' dest='{{targetlocation}}/{{item}}' state=link
    - name: Ensuring directories has right previlages

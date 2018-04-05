@@ -1,12 +1,12 @@
 ---
-dev1:
-  deploy_path: "/home/santu/apacheapp"
-  deploy_domain: "tomcatapp"
+#dev1:
+  deploy_path: "/home/santu/apacheapp/tomcatapp"
+ # deploy_domain: "tomcatapp"
 
-uat:
-  deploy_path: "/home/santu/apacheappuat"
-  deploy_domain: "tomcatapp"
+#uat:
+  #deploy_path: "/home/santu/apacheappuat"
+  #deploy_domain: "tomcatapp"
 
-uat2:
-  deploy_path: "/home/santu/apacheappuat2"
-  deploy_domain: "tomcatapp"
+ #uat2:
+ #deploy_path: "/home/santu/apacheappuat2"
+ #deploy_domain: "tomcatapp"

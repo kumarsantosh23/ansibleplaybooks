@@ -1,0 +1,12 @@
+---
+
+- hosts: all
+  connection: ssh
+  gather_facts: no
+  tasks:
+    - name: testing for copying module
+      copy:
+        src: /home/santu/ansibleplaybooks/rectangle.tar
+        dest: /home/santu/apacheapp/tomcatapp
+        owner: santu
+        group: santu
